@@ -2,9 +2,16 @@ from game import Game #on importe la classe Game
 from player import Player #on importe la classe Player
 
 #L'utilisateur choisit entre bot et humain
-player_n1 = Player(input("entrer bot ou entrer un nom pour un humain : "))
-player_n2 = Player(input("entrer bot ou entrer un nom pour un humain : "))
-#On définit les arguments de la class game via les types de joueurs sélectioné.
+a=input("Joueur 1 : entrer bot ou entrer un nom pour un humain : ")
+b=input("Joueur 2 : entrer bot ou entrer un nom pour un humain : ")
+player_n1 = Player(a)
+player_n2 = Player(b)
+if a == "Aymeric":
+    print("Salut Aymeric")
+else:
+    print("Bonjour et bienvenue joueur")
+
+#On définit les parametres de la class game via les joeurs sélectioné
 game_class = Game(player_n1,player_n2)
 
 #On lance le jeu
@@ -15,6 +22,8 @@ while True:
         break
     elif game_class.score_2==3:
         print ("Joueur 2 à gagner la partie")
+        if a=="Aymeric" and b =="bot" :
+            print("...Perdre contre un bot, la honte Aymeric")
         break
     else:
     #Dans le cas contraire le jeu continue
