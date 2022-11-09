@@ -4,7 +4,7 @@ from player import Player #on importe la classe Player
 #L'utilisateur choisit entre bot et humain
 player_n1 = Player(input("entrer bot ou entrer un nom pour un humain : "))
 player_n2 = Player(input("entrer bot ou entrer un nom pour un humain : "))
-#On définit les parametres de la class game via les joeurs sélectioné
+#On définit les arguments de la class game via les types de joueurs sélectioné.
 game_class = Game(player_n1,player_n2)
 
 #On lance le jeu
