@@ -26,16 +26,13 @@ class Game:
             return("egaliter")
         elif choix2=="papier" and choix1=="papier":
             return("egaliter")
-        elif choix2=="ciseaux" and choix1=="cisaux":
+        elif choix2=="ciseaux" and choix1=="ciseaux":
             self.score_2+=1
             return("egaliter")
-    def counter(self): #permet de compter le nombre de partie
-        self.nb_partie+=1
-    def end(self): #Permet d'établir que le jeu est terminer à 3 manche
-        if self.nb_partie==3:
-            return ("la partie est ")
+
     def choice_player(self): #Permet d'afficher le gagnant de la manche
         choice_1=self.player_1.choice()
         choice_2=self.player_2.choice()
-        gagnant = self.regles(choice_1, choice_2)
-        print (gagnant)
+        issue = self.regles(choice_1, choice_2)
+        print(f"{choice_1} vs {choice_2}")
+        print (issue)
