@@ -4,6 +4,10 @@ board = [       #tableau de jeu
     [0,0,0]
 ]
 
+def display(board):
+    print(board[0])
+    print(board[1])
+    print(board[2])
 
 def win(board,player): #cette fonction permet d'identifier une victoire
     if board[0][0]==player and board[0][1]==player and board[0][2]==player: #horizontal
@@ -24,7 +28,7 @@ def win(board,player): #cette fonction permet d'identifier une victoire
         return True
     return False
 
-def case_vide(board,a): #cette fonction vérifie que la case est utiliser ou non
+def empty(board,a): #cette fonction vérifie que la case est utiliser ou non
     if a==1:
         if board[0][0]==0:
             return True
@@ -71,69 +75,54 @@ def case_vide(board,a): #cette fonction vérifie que la case est utiliser ou non
         else:
             return False
 
-def case_existe(a):#Cette fonction permet de vérifier que cette case existe ou non
+def real(a):#Cette fonction permet de vérifier que cette case existe ou non
     if 1<=a<=9:
         return True
     else:
         return False
 
 
-def jeu(a,player):#cette fonction définir
+def game(a,player):#cette fonction définir
     if a==1:
         board[0][0]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==2:
         board[0][1]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==3:
         board[0][2]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==4:
         board[1][0]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==5:
         board[1][1]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==6:
         board[1][2]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==7:
         board[2][0]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==8:
         board[2][1]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     if a==9:
         board[2][2]=player
-        print(board[0])
-        print(board[1])
-        print(board[2])
+        display(board)
     
     
         
 def partie(case,n):
-    if case_existe(case) and case_vide(board,case):
-        jeu(case,n)
+    if real(case) and empty(board,case):
+        game(case,n)
 
 
 
 count=0
+print([1,2,3])
+print([4,5,6])
+print([7,8,9])
 while True:
     """
     Joueur 1
@@ -148,7 +137,9 @@ while True:
     case_j1=int(case_j1)#on transforme cette valeur en integer
 
 
-    while not case_existe(case_j1):#On verifie que la case existe et que la veleur entrer est un chiffre
+    while not real(case_j1):#On verifie que la case existe et que la veleur entrer est un chiffre
+        if case_j1==666:
+            print("😈 va de retro satana  😈")
         while True:
             case_j1=input("cette case n'existe pas, entrée en une nouvelle : ")
             try:
@@ -157,7 +148,7 @@ while True:
             except:
                 print("Erreur : ce n' est pas un chiffre")
         case_j1=int(case_j1)   
-    while not case_vide(board,case_j1): #On vérifie que la case n'est pas déja utiliser et que la valeur entrer est un chiffre
+    while not empty(board,case_j1): #On vérifie que la case n'est pas déja utiliser et que la valeur entrer est un chiffre
         while True:
             case_j1=input("cette case est prise, entrée en une nouvelle : ")
             try:
@@ -189,7 +180,9 @@ while True:
     case_j2=int(case_j2)#on transforme cette valeur en integer
 
 
-    while not case_existe(case_j2):#On verifie que la case existe et que la veleur entrer est un chiffre
+    while not real(case_j2):#On verifie que la case existe et que la veleur entrer est un chiffre
+        if case_j2==666:
+            print("😈 va de retro satana  😈")
         while True:
             case_j2=input("cette case n'existe pas, entrée en une nouvelle : ")
             try:
@@ -198,7 +191,7 @@ while True:
             except:
                 print("Erreur : ce n' est pas un chiffre")
         case_j2=int(case_j2)   
-    while not case_vide(board,case_j2): #On vérifie que la case n'est pas déja utiliser et que la valeur entrer est un chiffre
+    while not empty(board,case_j2): #On vérifie que la case n'est pas déja utiliser et que la valeur entrer est un chiffre
         while True:
             case_j2=input("cette case est prise, entrée en une nouvelle : ")
             try:
