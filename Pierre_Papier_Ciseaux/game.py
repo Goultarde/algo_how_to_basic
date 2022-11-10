@@ -2,7 +2,7 @@ class Game:
     def __init__(self,player_1,player_2):
         self.player_1=player_1
         self.player_2=player_2
-        self.score_1, self.score_2,self.nb_partie=0,0,0
+        self.score_1, self.score_e=0,0
     def regles(self,choix1,choix2): #On définit les règles du jeu
         if choix1=="pierre" and choix2=="ciseaux":
             self.score_1+=1
